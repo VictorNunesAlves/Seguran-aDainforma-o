@@ -3,7 +3,6 @@ import csv
 import random
 import time
 
-# Alfabeto usado na geração
 ALPHABET = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*()-_+=<>?'
 PASSWORD_LENGTH = 5
 CHAIN_LENGTH = 1000
@@ -18,7 +17,7 @@ def gerar_senhas(quantidade_de_senhas):
     senhas = []
     for _ in range(quantidade_de_senhas):
         senhas.append(generate_random_password())
-    return senhas  # Retorna a lista gerada
+    return senhas
 
 def salvar_hashes_no_arquivo(lista_senhas, nome_arquivo='hashes.txt'):
     with open(nome_arquivo, 'w') as f:
@@ -71,9 +70,9 @@ if __name__ == "__main__":
     senhas = gerar_senhas(quantidade_de_senhas)  
     salvar_hashes_no_arquivo(senhas)
 
-    start_time = time.time()  # Inicia contagem de tempo
+    start_time = time.time()  
     procurar_hashes_em_rainbow_table('hashes.txt', 'rainbow_table_colorida.csv')
-    end_time = time.time()  # Finaliza contagem de tempo
+    end_time = time.time() 
 
     tempo_total = end_time - start_time
     print(f"Tempo total para procurar hashes: {tempo_total:.2f} segundos")
